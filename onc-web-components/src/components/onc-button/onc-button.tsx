@@ -9,12 +9,8 @@ console.log('[onc-button build] v0.1-iter1');
   shadow: true,
 })
 export class OncButton {
-  /**
-   * Semantic color of the button.
-   * - "primary" (default)
-   * - "neutral"
-   */
-  @Prop({ reflect: true }) color: string = 'primary';
+  @Prop({ reflect: true })
+    color: 'primary' | 'neutral' = 'primary';
 
   private resolveColor(): 'primary' | 'neutral' {
     return this.color === 'neutral' ? 'neutral' : 'primary';

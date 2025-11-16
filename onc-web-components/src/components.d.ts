@@ -8,10 +8,9 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface OncButton {
         /**
-          * Semantic color of the button. - "primary" (default) - "neutral"
           * @default 'primary'
          */
-        "color": string;
+        "color": 'primary' | 'neutral';
     }
 }
 declare global {
@@ -28,10 +27,9 @@ declare global {
 declare namespace LocalJSX {
     interface OncButton {
         /**
-          * Semantic color of the button. - "primary" (default) - "neutral"
           * @default 'primary'
          */
-        "color"?: string;
+        "color"?: 'primary' | 'neutral';
     }
     interface IntrinsicElements {
         "onc-button": OncButton;
