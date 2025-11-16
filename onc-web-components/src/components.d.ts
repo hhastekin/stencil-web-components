@@ -6,19 +6,42 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface OncButton {
+        /**
+          * Semantic color of the button. - "primary" (default) - "neutral"
+          * @default 'primary'
+         */
+        "color": string;
+    }
 }
 declare global {
+    interface HTMLOncButtonElement extends Components.OncButton, HTMLStencilElement {
+    }
+    var HTMLOncButtonElement: {
+        prototype: HTMLOncButtonElement;
+        new (): HTMLOncButtonElement;
+    };
     interface HTMLElementTagNameMap {
+        "onc-button": HTMLOncButtonElement;
     }
 }
 declare namespace LocalJSX {
+    interface OncButton {
+        /**
+          * Semantic color of the button. - "primary" (default) - "neutral"
+          * @default 'primary'
+         */
+        "color"?: string;
+    }
     interface IntrinsicElements {
+        "onc-button": OncButton;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "onc-button": LocalJSX.OncButton & JSXBase.HTMLAttributes<HTMLOncButtonElement>;
         }
     }
 }

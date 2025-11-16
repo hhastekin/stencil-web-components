@@ -1,0 +1,52 @@
+:host {
+  display: inline-block;
+}
+
+/* Base button reset-ish styling */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  border-width: 1px;
+  border-style: solid;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  cursor: pointer;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+/* Primary (blue-ish) */
+.button--primary {
+  background-color: #2563eb; /* blue-600 */
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+/* Neutral (grey) – important that this is visually *not* blue */
+.button--neutral {
+  background-color: #e5e7eb; /* gray-200 */
+  border-color: #d1d5db;     /* gray-300 */
+  color: #111827;            /* gray-900 */
+}
+
+/* Basic focus outline so we can see it's alive */
+.button:focus-visible {
+  outline: 2px solid #111827;
+  outline-offset: 2px;
+}
+
+/* Optional: slightly dim when disabled later (no disabled prop yet) */
+/*
+.button--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+*/
